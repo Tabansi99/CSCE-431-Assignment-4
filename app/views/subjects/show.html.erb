@@ -1,0 +1,36 @@
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<%= link_to("<< Back to Main", subjects_path, :class => 'back-link') %>
+
+<div class="subjects show">
+  <h2>Book Information</h2>
+
+  <table summary="Subject detail view">
+    <tr>
+      <th>Title</th>
+      <td><%= @subject.Title %></td>
+    </tr>
+    <tr>
+      <th>Author</th>
+      <td><%= @subject.Author %></td>
+    </tr>
+    <tr>
+      <th>Genre</th>
+      <td><%= @subject.Genre %></td>
+    </tr>
+    <tr>
+      <th>Price</th>
+      <td><%= @subject.Price %></td>
+    </tr>
+    <tr>
+      <th>Publish Date</th>
+      <td><%= @subject.Publish_Date %></td>
+    </tr>
+  </table>
+
+</div>
+
