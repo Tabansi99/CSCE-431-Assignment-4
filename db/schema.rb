@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_09_16_012829) do
 
-  create_table "subjects", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "subjects", force: :cascade do |t|
     t.string "Title"
     t.string "Author"
     t.string "Genre"
@@ -22,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_09_16_012829) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "Title"
     t.string "Author"
     t.string "Genre"
