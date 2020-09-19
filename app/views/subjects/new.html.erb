@@ -1,0 +1,36 @@
+<%= link_to("<< Back to Main", subjects_path, :class => 'back-link') %>
+
+<div class="subjects new">
+  <h2>Add a Book</h2>
+
+  <%= form_for(@subject) do |f| %>
+
+    <table summary="Subject form fields">
+      <tr>
+        <th>Book Title</th>
+        <td><%= f.text_field(:Title) %></td>
+      </tr>
+      <tr>
+        <th>Author</th>
+        <td><%= f.text_field(:Author) %></td>
+      </tr>
+      <tr>
+        <th>Genre</th>
+        <td><%= f.select(:Genre, ['Action', 'Adventure', 'Alternate history','Autobiography', 'Business' 'Childrens','Classic','Comedy','Comic','Crime','Drama','Fanatasy','History','Historical fiction','Horror']) %></td>
+      </tr>
+      <tr>
+        <th>Price</th>
+        <td><%= f.text_field(:Price) %></td>
+      </tr>
+      <tr>
+        <th>Publish Date</th>
+        <td><%= f.date_select(:Publish_Date) %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= f.submit("Create Subject") %>
+    </div>
+
+  <% end %>
+</div>

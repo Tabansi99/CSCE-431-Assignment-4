@@ -1,0 +1,41 @@
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<div class="subjects index">
+  <h2>Book Store</h2>
+
+  <%= link_to("Add New Book", new_subject_path, :class => 'action new') %>
+
+  <table style = "width:100%" class="listing" summary="Subject list">
+    <tr class="header">
+      <th>Title</th>
+      <th>Author</th>
+      <th>Genre</th>
+      <th>Price</th>
+      <th>Publish_Date</th>
+    </tr>
+    <% @subjects.each do |subject| %>
+    <tr>
+      <td><%= subject.Title %></td>
+      <td><%= subject.Author %></td>
+      <td><%= subject.Genre %></td>
+      <td><%= subject.Price %></td>
+      <td><%= subject.Publish_Date %></td>
+      <td class="actions">
+        <%= link_to("Show", subject_path(subject), :class => 'action show') %>
+        <%= link_to("Edit", edit_subject_path(subject), :class => 'action edit') %>
+        <%= link_to("Delete", delete_subject_path(subject), :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
