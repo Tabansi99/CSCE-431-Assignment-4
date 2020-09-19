@@ -25,11 +25,11 @@ table, th, td {
     </tr>
     <% @subjects.each do |subject| %>
     <tr>
-      <td><%= subject.Title %></td>
-      <td><%= subject.Author %></td>
-      <td><%= subject.Genre %></td>
-      <td><%= subject.Price %></td>
-      <td><%= subject.Publish_Date %></td>
+      <td><%= subject.title %></td>
+      <td><%= subject.author %></td>
+      <td><%= subject.genre %></td>
+      <td><%= subject.price %></td>
+      <td><%= subject.publishdate %></td>
       <td class="actions">
         <%= link_to("Show", subject_path(subject), :class => 'action show') %>
         <%= link_to("Edit", edit_subject_path(subject), :class => 'action edit') %>

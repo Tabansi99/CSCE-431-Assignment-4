@@ -16,21 +16,21 @@ ActiveRecord::Schema.define(version: 2020_09_16_012829) do
   enable_extension "plpgsql"
 
   create_table "subjects", force: :cascade do |t|
-    t.string "Title"
-    t.string "Author"
-    t.string "Genre"
-    t.float "Price"
-    t.date "Publish_Date"
+    t.string "title"
+    t.string "author"
+    t.string "genre"
+    t.float "price"
+    t.date "publishdate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "Title"
-    t.string "Author"
-    t.string "Genre"
-    t.float "Price"
-    t.date "Publish-Date"
+    t.string "title"
+    t.string "author"
+    t.string "genre"
+    t.float "price"
+    t.date "publish-date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

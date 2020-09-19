@@ -8,7 +8,7 @@ class SubjectsController < ApplicationController
   end
 
   def new
-    @subject = Subject.new({:Title => 'Default'})
+    @subject = Subject.new({:title => 'Default'})
   end
 
   def create
@@ -46,13 +46,13 @@ class SubjectsController < ApplicationController
   def destroy
     @subject = Subject.find(params[:id])
     @subject.destroy
-    flash[:notice] = "'#{@subject.Title}' removed successfully."
+    flash[:notice] = "'#{@subject.title}' removed successfully."
     redirect_to(subjects_path)
   end
 
   private
 
   def subject_params
-    params.require(:subject).permit(:Title, :Author, :Genre, :Price, :Publish_Date)
+    params.require(:subject).permit(:title, :author, :genre, :price, :publishdate)
   end
 end
