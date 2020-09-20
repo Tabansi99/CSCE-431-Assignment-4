@@ -16,6 +16,7 @@ default: &default
   username: rails_user
   password: Preyas99
   host: localhost
+  port: 5432
 
 development:
   <<: *default
